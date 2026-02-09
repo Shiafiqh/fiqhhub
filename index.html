@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiqhHub — Encyclopedia of Shia Islamic Jurisprudence</title>
+    <meta name="description" content="Comprehensive encyclopedia of Shia Islamic jurisprudence (fiqh) featuring rulings from 10 Grand Ayatollahs across 34 categories with AI-powered guidance.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav id="main-nav">
+        <div class="nav-inner">
+            <a href="#/" class="nav-logo">
+                <span class="logo-icon">☽</span>
+                <span class="logo-text">FiqhHub</span>
+                <span class="logo-sub">Encyclopedia of Shia Fiqh</span>
+            </a>
+            <div class="nav-links">
+                <a href="#/" class="nav-link" data-page="home">Home</a>
+                <a href="#/maraja" class="nav-link" data-page="maraja">Maraja'</a>
+                <a href="#/categories" class="nav-link" data-page="categories">Categories</a>
+                <a href="#/browse" class="nav-link" data-page="browse">Browse All</a>
+                <a href="#/compare" class="nav-link" data-page="compare">Compare</a>
+                <a href="#/ask" class="nav-link nav-link-ai" data-page="ask">Ask AI</a>
+            </div>
+            <div class="nav-search">
+                <input type="text" id="global-search" placeholder="Search fatwas..." autocomplete="off">
+                <div id="search-results-dropdown" class="search-dropdown hidden"></div>
+            </div>
+            <button class="nav-mobile-toggle" id="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="mobile-menu hidden">
+        <a href="#/" class="mobile-link">Home</a>
+        <a href="#/maraja" class="mobile-link">Maraja'</a>
+        <a href="#/categories" class="mobile-link">Categories</a>
+        <a href="#/browse" class="mobile-link">Browse All</a>
+        <a href="#/compare" class="mobile-link">Compare</a>
+        <a href="#/ask" class="mobile-link">Ask AI Scholar</a>
+    </div>
+
+    <!-- Main Content -->
+    <main id="app"></main>
+
+    <!-- AI Chat Floating Button -->
+    <button id="ai-fab" title="Ask AI Scholar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    </button>
+
+    <!-- AI Chat Panel -->
+    <div id="ai-panel" class="ai-panel hidden">
+        <div class="ai-panel-header">
+            <h3>🕌 AI Fiqh Scholar</h3>
+            <span class="ai-panel-sub">Powered by GPT-4o • Educational Only</span>
+            <button id="ai-panel-close">✕</button>
+        </div>
+        <div id="ai-messages" class="ai-messages">
+            <div class="ai-msg ai-msg-bot">
+                <p>Assalamu Alaikum! I'm your AI Fiqh research assistant. I can help you understand rulings from the Maraja', compare opinions, explain jurisprudential reasoning, and find relevant fatwas.</p>
+                <p class="ai-disclaimer">⚠️ I provide educational information only. For binding religious rulings, always refer directly to your Marja's official risalah.</p>
+            </div>
+        </div>
+        <div class="ai-suggestions" id="ai-suggestions">
+            <button class="ai-suggestion" data-q="What are the conditions for valid wudu according to Ayatollah Sistani?">Wudu conditions (Sistani)</button>
+            <button class="ai-suggestion" data-q="Compare the rulings on cryptocurrency between the major Maraja">Crypto rulings comparison</button>
+            <button class="ai-suggestion" data-q="What is the ruling on music according to different Maraja?">Music rulings</button>
+            <button class="ai-suggestion" data-q="Explain the concept of taqlid and how to choose a Marja">Understanding Taqlid</button>
+        </div>
+        <div class="ai-input-row">
+            <input type="text" id="ai-input" placeholder="Ask about any fiqh topic...">
+            <button id="ai-send">Send</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="site-footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>FiqhHub</h4>
+                <p>A comprehensive encyclopedia of Shia Islamic jurisprudence, featuring rulings from the most prominent Grand Ayatollahs of our time.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#/maraja">All Maraja'</a>
+                <a href="#/categories">Browse Categories</a>
+                <a href="#/compare">Compare Rulings</a>
+                <a href="#/ask">AI Scholar</a>
+            </div>
+            <div class="footer-col">
+                <h4>Disclaimer</h4>
+                <p>This is an educational resource. All rulings are sourced from published risalahs and official websites. For binding religious guidance, consult your Marja' directly.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 FiqhHub — بسم الله الرحمن الرحيم</p>
+        </div>
+    </footer>
+
+    <!-- Data Files -->
+    <script src="data/maraja.js"></script>
+    <script src="data/categories.js"></script>
+    <script src="data/fatwas-taharat.js"></script>
+    <script src="data/fatwas-salat.js"></script>
+    <script src="data/fatwas-sawm.js"></script>
+    <script src="data/fatwas-hajj.js"></script>
+    <script src="data/fatwas-khums.js"></script>
+    <script src="data/fatwas-zakat.js"></script>
+    <script src="data/fatwas-nikah.js"></script>
+    <script src="data/fatwas-talaq.js"></script>
+    <script src="data/fatwas-trade.js"></script>
+    <script src="data/fatwas-food.js"></script>
+    <script src="data/fatwas-clothing.js"></script>
+    <script src="data/fatwas-music.js"></script>
+    <script src="data/fatwas-medical.js"></script>
+    <script src="data/fatwas-digital.js"></script>
+    <script src="data/fatwas-banking.js"></script>
+    <script src="data/fatwas-death.js"></script>
+    <script src="data/fatwas-jihad.js"></script>
+    <script src="data/fatwas-judiciary.js"></script>
+    <script src="data/fatwas-inheritance.js"></script>
+    <script src="data/fatwas-oaths.js"></script>
+    <script src="data/fatwas-waqf.js"></script>
+    <script src="data/fatwas-custody.js"></script>
+    <script src="data/fatwas-taqlid.js"></script>
+    <script src="data/fatwas-amr.js"></script>
+    <script src="data/fatwas-hunting.js"></script>
+    <script src="data/fatwas-ijarah.js"></script>
+    <script src="data/fatwas-interaction.js"></script>
+    <script src="data/fatwas-misc.js"></script>
+    <script src="data/fatwas-quran.js"></script>
+
+    <!-- Config & App Scripts -->
+    <script src="config.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
