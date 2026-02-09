@@ -6,8 +6,8 @@
 // ============================================================
 // DATA AGGREGATION
 // ============================================================
-const MARAJA = window.MARAJA_DATA || [];
-const CATEGORIES = window.CATEGORIES_DATA || [];
+const MARAJA = window.MARAJA || [];
+const CATEGORIES = window.CATEGORIES || [];
 
 // Aggregate all fatwa arrays
 const ALL_FATWAS = [].concat(
@@ -569,7 +569,6 @@ function fatwaCard(f) {
             </div>
         </div>
     </div>`;
-}
 }
 
 function attachFatwaListeners() {
